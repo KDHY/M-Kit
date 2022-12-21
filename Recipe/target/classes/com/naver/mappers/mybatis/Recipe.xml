@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="Recipe">
+
+	<insert id="mkitjoin" parameterType="mkMem">
+		insert into
+		mkit_member(mkit_name, mkit_id, mkit_password, mkit_mail, mkit_phone,
+		mkit_state, mkit_date)
+		values(#{mkit_name}, #{mkit_id},
+		#{mkit_password}, #{mkit_mail}, #{mkit_phone}, 1, sysdate)
+	</insert>
+
+	<select id="mkit_idcheck" parameterType="java.lang.String" resultType="mkMem">
+		select * from mkit_member where mkit_id=#{id}
+	</select>
+
+	<select id="mkit_loginCk" parameterType="java.lang.String" resultType="mkMem">
+		select * from mkit_member where mkit_id=#{login_id} and mkit_state = 1
+	</select>
+	
+	<select id="grantcheck" parameterType="java.lang.String" resultType="int">
+		select grante from mkit_member where mkit_id=#{login_id}
+	</select>
+
+	<select id="find_id" resultType="mkMem">
+		select mkit_id from mkit_member where mkit_name=#{mkit_name} and mkit_mail=#{mkit_mail}
+	</select>
+	
+	<select id="find_pwd" resultType="mkMem">
+		select mkit_password from mkit_member where mkit_id=#{mkit_id} and mkit_mail=#{mkit_mail}
+	</select>	
+	
+	<select id="readM" parameterType="java.lang.String" resultType="mkMem">
+		select * from mkit_member where mkit_id=#{id}
+	</select>
+
+	<select id="check_pas" parameterType="java.lang.String" resultType="java.lang.String">
+		select mkit_password from mkit_member where mkit_id=#{id}
+	</select>
+	<delete id="deluser">
+		delete from mkit_member where mkit_id=#{id}
+	</delete>
+	<update id="edituser">
+		update mkit_member set mkit_name=#{mkit_name}, mkit_password=#{mkit_password}, 
+		mkit_mail=#{mkit_mail}, mkit_phone=#{mkit_phone} where mkit_id=#{mkit_id}
+	</update>
+
+
+	<!-- 검색 전후 레코드 개수 -->
+	<select id="gongji_count" parameterType="mkGong" resultType="int">
+		select count(gongji_no) from mkit_gongji
+		<where>
+			<if test="find_field == ''"><!-- 검색조건이 없어서 총레코드 개수 -->
+			</if>
+			<if test="find_field == 'gongji_title'"><!-- 검색 조건이 제목인 경우 -->
+				gongji_title like #{find_name} <!-- like는 오라클 검색 연산자 -->
+			</if>
+			<if test="find_field == 'gongji_cont'">
+				gongji_cont like #{find_name}
+			</if>
+		</where>
+	</select>
+
+	<!-- 게시판 목록 -->
+	<select id="gongji_li" resultType="mkGong" parameterType="mkGong">
+		<!-- resultType은 반환 타입,parameterType은 전달인자 타입 (생략가능) -->
+		select * from (select rowNum rNum,gongji_no,gongji_title,gongji_writer,gongji_hit,gongji_date
+		from (select * from mkit_gongji
+		<where>
+			<if test="find_field == ''">
+				<!-- 검색조건이 없어서 총레코드 개수 -->
+			</if>
+			<if test="find_field == 'gongji_title'">
+				<!-- 검색 조건이 제목인 경우 -->
+				gongji_title like #{find_name} <!-- like는 오라클 검색 연산자 -->
+			</if>
+			<if test="find_field == 'gongji_cont'">
+				gongji_cont like #{find_name}
+			</if>
+		</where>
+		order by gongji_no desc))where rNum &gt;= #{startrow} and rNum &lt;= #{endrow}
+		<!-- &gt;은 ~보다 크다(>), &lt;은 ~보다 작다(<) -->
+	</select>
+	
+	<update id="update_hit" parameterType="int">
+     update mkit_gongji set gongji_hit=gongji_hit+1 
+     where gongji_no=#{gongji_no}
+    </update>
+    
+    <select id="gong_cont" resultType="mkGong">
+         select * from mkit_gongji where gongji_no=#{gongji_no}
+    </select>
+    
+    <insert id="gong_insert" parameterType="mkGong">
+    	insert into mkit_gongji values(mk_gong_seq.nextval, #{gongji_title}, #{gongji_writer}, #{gongji_cont}, 0, SYSDATE)
+    </insert>
+    
+    <delete id="gong_del" parameterType="mkGong">
+    	delete from mkit_gongji where gongji_no=#{gongji_no}
+    </delete>
+    
+    <update id="gong_edit" parameterType="mkGong">
+    	update mkit_gongji set gongji_title=#{gongji_title}, gongji_writer=#{gongji_writer},gongji_cont=#{gongji_cont} 
+    	where gongji_no=#{gongji_no}
+    </update>
+    
+    
+    
+    
+    
+    <!-- 사용자 게시판 -->
+    <!-- 게시물 개수 -->
+    <select id="cus_count" resultType="int">
+		select count(custom_no) from mkit_custom
+		<where>
+			<if test="find_field == ''"><!-- 검색조건이 없어서 총레코드 개수 -->
+			</if>
+			<if test="find_field == 'custom_title'"><!-- 검색 조건이 제목인 경우 -->
+				custom_title like #{find_name} <!-- like는 오라클 검색 연산자 -->
+			</if>
+			<if test="find_field == 'custom_cont'">
+				custom_cont like #{find_name}
+			</if>
+		</where>
+	</select>
+	
+	
+	<!-- 게시판 목록 -->
+	<select id="cus_li" resultType="mkCus" >   
+		select * from (select rowNum rNum, custom_no, custom_title, custom_writer, custom_hit, custom_date
+		from (select * from mkit_custom 
+		<where>
+			<if test="find_field == ''">
+			</if>
+			<if test="find_field == 'custom_title'">
+				custom_title like #{find_name}
+			</if>
+			<if test="find_field == 'custom_cont'">
+				custom_cont like #{find_name}
+			</if>
+		</where>
+		order by custom_no desc)) where rNum &gt;= #{startrow} and rNum &lt;= #{endrow}
+		<!-- &gt;은 ~보다 크다(>), &lt;은 ~보다 작다(<) -->
+	</select>
+	
+	<!-- 게시물 저장 -->
+	<insert id="cus_insert" parameterType="mkGong">
+    	insert into mkit_custom values(mk_cus_seq.nextval, #{custom_title}, #{custom_writer}, #{custom_cont}, 0, SYSDATE)
+    </insert>
+    
+    <!-- 조회수 증가 -->
+    <update id="up_hit" parameterType="int">
+     update mkit_custom set custom_hit=custom_hit+1 
+     where custom_no=#{custom_no}
+    </update>
+    
+    <select id="cus_cont" resultType="mkCus">
+         select * from mkit_custom where custom_no=#{custom_no}
+    </select>
+    
+    <delete id="cus_del" parameterType="mkCus">
+    	delete from mkit_custom where custom_no=#{custom_no}
+    </delete>
+    
+    <update id="cus_edit" parameterType="mkCus">
+    	update mkit_custom set custom_title=#{custom_title}, custom_writer=#{custom_writer},custom_cont=#{custom_cont} where custom_no=#{custom_no}
+    </update>
+    
+    
+    
+    <insert id="menu_in">
+    	insert into mkit_menu values(mk_seq.nextval, #{mk_name}, #{mk_price}, #{mk_images}, #{mk_info}, 0, SYSDATE)
+    </insert>
+    <select id="countmenu" resultType="int">
+		select count(mk_id) from mkit_menu
+		<where>
+			<if test="find_field == ''"><!-- 검색조건이 없어서 총레코드 개수 -->
+			</if>
+			<if test="find_field == 'menu_name'"><!-- 검색 조건이 제목인 경우 -->
+				mk_name like #{find_name} <!-- like는 오라클 검색 연산자 -->
+			</if>
+		</where>
+	</select>
+    
+    <!-- 게시판 목록 -->
+	<select id="menulist" resultType="mkMenu" >   
+		select * from (select rowNum rNum,mk_id, mk_name, mk_price, mk_images
+		from (select * from mkit_menu 
+		<where>
+			<if test="find_field == ''">
+			</if>
+			<if test="find_field == 'mk_name'"><!-- 검색 조건이 제목인 경우 -->
+				mk_name like #{find_name} <!-- like는 오라클 검색 연산자 -->
+			</if>
+		</where>
+		order by to_number(mk_id) desc)) where rNum &gt;= #{startrow} and rNum &lt;= #{endrow}
+		<!-- &gt;은 ~보다 크다(>), &lt;은 ~보다 작다(<) -->
+	</select>
+    
+    <select id="menucont" resultType="mkMenu">
+    	select * from mkit_menu where mk_id=#{mk_id}
+    </select>
+    
+    <select id="bestmenu" resultType="mkMenu" >   
+		select * from (select rowNum rNum,mk_id, mk_name, mk_price, mk_images
+		from (select * from mkit_menu order by to_number(mk_sell) desc)) where rNum &gt;= 1 and rNum &lt;= 4
+		<!-- &gt;은 ~보다 크다(>), &lt;은 ~보다 작다(<) -->
+	</select>
+</mapper>

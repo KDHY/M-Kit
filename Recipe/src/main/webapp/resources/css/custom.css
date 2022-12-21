@@ -1,0 +1,257 @@
+@charset "UTF-8";
+
+#custom_cont{
+	height: auto;
+}
+#custom{
+	margin:65px 300px;
+	width: 1300px;
+	color: #747474;
+}
+#custom h1{
+	height:37px;
+	margin-left: 150px;
+	margin-right: 55px;
+	display: flex;
+	flex-basis: 100%;
+	align-items: center;
+}
+
+#custom h1::after{
+	content: "";
+	flex-grow: 1;
+	background: rgba(0, 0, 0, 0.35);
+	height: 1px;
+	font-size: 0px;
+	line-height: 0px;
+	margin: 0px 35px;
+}
+
+#cMain_t{
+	text-align:center;
+	width: 900px;
+	margin: 10px 500px;
+	border:0px;
+	border-collapse: collapse;
+}
+
+#cMain_t th{
+	height: 50px;
+	border-bottom: 1px solid #747474;
+}
+#cMain_t td{
+	height: 50px;
+	border-bottom: 1px solid #747474;
+	color:#747474;
+}
+#cMain_t tr{
+	height: 50px;
+	border-bottom: 1px solid #747474;
+}
+
+#cList_paging a{
+	color: #747474;
+}
+#cList_paging a:hover{
+	color: #c6c6c6;
+}
+a:link{text-decoration:none;}
+a:active{text-decoration:none;}
+a:visited{text-decoration:none;}
+#cMain_t a{color: #747474;}
+#cMain_t a:hover{color: #c0c0c0;}
+#c_top{
+	background: #747474;
+	color: white;
+}
+#cList_paging{
+	width:1200px;
+	text-align:center;
+ 	margin: 10px 350px;
+}
+#cFind_wrap{
+	height: 40px;
+	width: 1200px;
+	margin-left: 350px;
+	margin-top:15px;
+}
+#cList_menu{
+	text-align:right;
+	margin-left:1251px;
+	margin-top:25px;
+	width: 146px;
+}
+
+
+
+
+
+/* 작성 */
+#custom_write{
+	font-size:20px;
+	border:3px solid #747474;
+	width: 800px;
+	height: auto;
+	margin-left:550px;
+}
+#mcWrite_t{
+	border-collapse: collapse;
+	margin:auto;
+	width: 600px;
+}
+#mcWrite_t tr{
+	height: 60px;
+	border-bottom: 1px solid #747474;
+}
+
+#mcWrite_t td{
+	
+	margin:25px0px;
+}
+#mcWrite_t input{
+	font-size:20px;
+	border:0px;
+	margin-left:20px;
+}
+
+#mcWrite_t textarea{
+	margin:10px 0px;
+	margin-left:20px;
+	resize: none;
+}
+#mcWrite_menu{
+	height:35px;
+	margin:25px 0px;
+	margin-left:272px;
+	width: 255px;
+}
+#cus_save, #cus_can, #cus_wlist{
+	height: 35px;
+	width: 80px;
+	border-radius: 5px;
+	border: 0px;
+	background: #747474;
+	color:white;
+	font-size: 15px;
+}
+
+
+
+
+
+
+/* 사용자 게시글 뷰페이지*/
+#custom_view{
+	border:3px solid #747474;
+	width: 1200px;
+	margin-left: 350px;
+	margin-top:50px;
+}
+
+#cCont_t th{
+	width:85px;
+}
+#contbot td{
+	height: 500px;
+}
+#cCont_t td{
+	width:500px;
+	word-break:break-all;
+}
+
+#contbot{
+	border-bottom: 1px solid #747474;
+	border-top: 1px solid #747474;
+	height: auto;
+}
+
+#cCont_t{
+	padding: 30px;
+	width: 940px;
+	height: auto;
+	margin-left: 130px;	
+	border-collapse: collapse;
+}
+#cCont_menu{
+	height: 55px;
+	width: 300px;
+	margin-bottom: 20px;
+	margin-left: 450px;
+	margin-top: 50px;
+}
+#cus_edit, #cus_del, #cus_list{
+	margin:0px 5px;
+	height: 40px;
+	font-size: 18px;
+	width: 80px;
+	border-radius: 15px;
+	border: 0px;
+	background: #747474;
+	color:white;
+}
+
+#cus_nlist{
+	display: block;
+	margin: auto;
+	height: 40px;
+	font-size: 18px;
+	width: 80px;
+	border-radius: 15px;
+	border: 0px;
+	background: #747474;
+	color:white;
+}
+
+
+
+
+/* 수정 */
+
+#custom_edit{
+	font-size:20px;
+	border:3px solid #747474;
+	width: 800px;
+	height: auto;
+	margin-left:550px;
+}
+#cedit_t{
+	border-collapse: collapse;
+	margin:auto;
+	width: 600px;
+}
+#cedit_t tr{
+	height: 45px;
+	border-bottom: 1px solid #747474;
+}
+
+#cedit_t td{
+	margin:25px0px;
+}
+#cedit_t input{
+	font-size:20px;
+	border:0px;
+	margin-left:20px;
+}
+
+#cedit_t textarea{
+	margin:10px 0px;
+	margin-left:20px;
+	resize: none;
+}
+#cus_eedit, #cus_ecan, #cus_elist{
+	height: 35px;
+	width: 80px;
+	border-radius: 5px;
+	border: 0px;
+	background: #747474;
+	color:white;
+	font-size: 15px;
+}
+#cedit_menu{
+	height:35px;
+	margin:25px 0px;
+	margin-left:272px;
+	width: 255px;
+}
+
+

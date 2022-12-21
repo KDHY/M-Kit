@@ -1,0 +1,331 @@
+@charset "UTF-8";
+
+@font-face {
+	font-family: 'MICEGothic Bold';
+	src:
+		url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-01@1.0/MICEGothic Bold.woff2')
+		format('woff2');
+	font-weight: 700;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Y_Spotlight';
+	src:
+		url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts-20-12@1.0/Y_Spotlight.woff')
+		format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'GmarketSansMedium';
+	src:
+		url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff')
+		format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+#gongji_cont{
+	height: auto;
+}
+#gongji{
+	margin:65px 300px;
+	width: 1300px;
+	color: #424242;
+}
+#gongji h1{
+	height:37px;
+	margin-left: 150px;
+	margin-right: 55px;
+	display: flex;
+	flex-basis: 100%;
+	align-items: center;
+}
+
+#gongji h1::after{
+	content: "";
+	flex-grow: 1;
+	background: rgba(0, 0, 0, 0.35);
+	height: 1px;
+	font-size: 0px;
+	line-height: 0px;
+	margin: 0px 35px;
+}
+
+#gMain_t{
+	text-align:center;
+	width: 900px;
+	margin: 10px 500px;
+	border:0px;
+	border-collapse: collapse;
+}
+
+#gMain_t th{
+	height: 50px;
+	border-bottom: 1px solid #424242;
+}
+#gMain_t td{
+	height: 50px;
+	border-bottom: 1px solid #424242;
+	color:#424242;
+}
+#gMain_t tr{
+	height: 50px;
+	border-bottom: 1px solid #424242;
+}
+#gList_paging a{
+	color: #424242;
+}
+#gList_paging a:hover{
+	color: #c6c6c6;
+}
+a:link{text-decoration:none;}
+a:active{text-decoration:none;}
+a:visited{text-decoration:none;}
+#gMain_t a{color: #424242;}
+#gMain_t a:hover{color: #c0c0c0;}
+#g_top{
+	background: #424242;
+	color: white;
+}
+#gList_paging{
+	width:1200px;
+	text-align:center;
+ 	margin: 10px 350px;
+}
+
+#wr_gong{
+	font-size:15px;
+	width: 70px;
+	height: 30px;
+	background: #424242;
+	color:white;
+	border-radius: 5px;
+	border: 0px;
+}
+#li_gong{
+	font-size:15px;
+	width: 70px;
+	height: 30px;
+	background: #424242;
+	color:white;
+	border-radius: 5px;
+	border: 0px;
+}
+#gList_menu{
+	text-align:right;
+	margin-left:1251px;
+	margin-top:25px;
+	width: 146px;
+}
+#bFind_wrap{
+	height: 40px;
+	width: 1200px;
+	margin-left: 350px;
+	margin-top:15px;
+}
+
+#find_field{
+	margin-left: 681px;
+	width: 70px;
+	text-align: center;
+	height: 31px;
+	font-size: 15px;
+	border-radius: 5px;
+	background: #424242;
+	color:white;
+	border:0px;
+}
+#find_name{
+	margin-left:5px;
+	width: 220px;
+	height: 31px;
+	font-size: 15px;
+	border-radius: 5px;
+	background: #424242;
+	color:white;
+	border:0px;
+}
+#gong_ser{
+	width:60px;
+	height:31px;
+	font-size: 15px;
+	border-radius: 5px;
+	background: #424242;
+	color:white;
+	border:0px;
+}
+
+
+
+
+
+
+/* 공지 뷰페이지*/
+#gongji_view{
+	border:3px solid #747474;
+	width: 1200px;
+	margin-left: 350px;
+	margin-top:50px;
+}
+
+#bCont_t th{
+	width:85px;
+}
+#contbot td{
+	height: 500px;
+}
+#bCont_t td{
+	width:500px;
+	word-break:break-all;
+}
+
+#contbot{
+	border-bottom: 1px solid #424242;
+	border-top: 1px solid #424242;
+	height: auto;
+}
+
+#bCont_t{
+	padding: 30px;
+	width: 940px;
+	height: auto;
+	margin-left: 130px;	
+	border-collapse: collapse;
+}
+#bCont_menu{
+	height: 55px;
+	width: 300px;
+	margin-bottom: 20px;
+	margin-left: 450px;
+	margin-top: 50px;
+}
+#gong_edit, #gong_del, #gong_list{
+	margin:0px 5px;
+	height: 40px;
+	font-size: 18px;
+	width: 80px;
+	border-radius: 15px;
+	border: 0px;
+	background: #424242;
+	color:white;
+}
+
+#il_gong_list{
+	display: block;
+	margin: auto;
+	height: 40px;
+	font-size: 18px;
+	width: 80px;
+	border-radius: 15px;
+	border: 0px;
+	background: #424242;
+	color:white;
+}
+
+
+
+
+/*공지 작성 페이지*/
+#gongji_write{
+	font-size:20px;
+	border:3px solid #747474;
+	width: 800px;
+	height: auto;
+	margin-left:550px;
+}
+#gWrite_t{
+	border-collapse: collapse;
+	margin:auto;
+	width: 600px;
+}
+#gWrite_t tr{
+	height: 60px;
+	border-bottom: 1px solid #424242;
+}
+
+#gWrite_t td{
+	
+	margin:25px0px;
+}
+#gWrite_t input{
+	font-size:20px;
+	border:0px;
+	margin-left:20px;
+}
+
+#gWrite_t textarea{
+	margin:10px 0px;
+	margin-left:20px;
+	resize: none;
+}
+#bWrite_menu{
+	height:35px;
+	margin:25px 0px;
+	margin-left:272px;
+	width: 255px;
+}
+#gong_save, #gong_can, #gong_wlist{
+	height: 35px;
+	width: 80px;
+	border-radius: 5px;
+	border: 0px;
+	background: #424242;
+	color:white;
+	font-size: 15px;
+}
+
+
+
+
+
+/*수정*/
+#gongji_edit{
+	font-size:20px;
+	border:3px solid #747474;
+	width: 800px;
+	height: auto;
+	margin-left:550px;
+}
+#gedit_t{
+	border-collapse: collapse;
+	margin:auto;
+	width: 600px;
+}
+#gedit_t tr{
+	height: 45px;
+	border-bottom: 1px solid #424242;
+}
+
+#gedit_t td{
+	margin:25px0px;
+}
+#gedit_t input{
+	font-size:20px;
+	border:0px;
+	margin-left:20px;
+}
+
+#gedit_t textarea{
+	margin:10px 0px;
+	margin-left:20px;
+	resize: none;
+}
+#edit_menu{
+	height:35px;
+	margin:25px 0px; 
+	margin-left:272px;
+	width: 255px;
+}
+#gong_eedit, #gong_ecan, #gong_elist{
+	height: 35px;
+	width: 80px;
+	border-radius: 5px;
+	border: 0px;
+	background: #424242;
+	color:white;
+	font-size: 15px;
+}
+

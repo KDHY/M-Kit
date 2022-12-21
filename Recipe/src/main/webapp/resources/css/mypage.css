@@ -1,0 +1,101 @@
+@charset "UTF-8";
+
+#mypage_cont{
+	min-height: 500px;
+}
+#cont_size{
+	width: 1000px;
+	margin-left: 450px;
+}
+
+#myinfo{
+	width: 800px;
+	margin:50px 100px;
+	border-collapse: collapse;
+}
+
+#myinfo tr{
+	height: 65px;
+	font-size: 18px;
+}
+#myinfo td{
+	text-align: center;
+	border:1px solid #747474;
+
+}
+#myinfo th{
+	width:30%;
+	border:1px solid #747474;
+	background:#747474;
+	color:white;
+	text-align: center;
+}
+#myinfo #infot{
+	height:60px;
+	font-size:25px;
+	border: 0px;
+	background: white;
+	color: #747474;
+	padding-bottom: 45px; 
+}
+#mypagebtn{
+	text-align: center;
+}
+#info_edit,#info_del{
+	width: 150px;
+	height: 45px;
+	background: #747474;
+	border:0px;
+	color:white;
+	border-radius: 15px;
+}
+#info_edit:hover, #info_del:hover{
+	background: #424242;
+}
+
+#del_passch{
+	margin-left:190px;
+	margin-top:80px;
+	text-align:center;
+	display:none;
+	position: absolute;
+	border: 2px solid #747474;
+	width: 600px;
+	height: 350px;
+	background: white;
+}
+#clodel{
+	margin-left:560px;
+	margin-top:10px;
+	height: 25px;
+	width: 25px;
+}
+#del_passch h2{
+	margin-top:35px;
+	font-size: 35px;
+}
+#del_passch #del_pa_check {
+	text-align:center;
+	width: 300px;
+	margin:35px 150px;
+	margin-top:45px;
+	font-size: 22px;
+	background: white;
+	border:1px solid #747474;
+}
+#del_passch a{
+	background: #747474;
+	font-size: 18px;
+	padding:12px 50px;
+	border-radius: 10px;
+	text-decoration: none;
+	color: white;
+}
+#edit_ok, #edit_can{
+	border:0px;
+	height: 50px;
+	width: 150px;
+	background: #747474;
+	border-radius: 10px;
+	color:white;
+}

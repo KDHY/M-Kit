@@ -1,0 +1,326 @@
+@charset "UTF-8";
+
+
+@font-face {
+	font-family: 'MICEGothic Bold';
+	src:
+		url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-01@1.0/MICEGothic Bold.woff2')
+		format('woff2');
+	font-weight: 700;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Y_Spotlight';
+	src:
+		url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts-20-12@1.0/Y_Spotlight.woff')
+		format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'GmarketSansMedium';
+	src:
+		url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff')
+		format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+.clear {
+	clear: both; /*float속성을 제거해서 잘못된 ui적용을 막아준다*/
+}
+#login_p{
+	height: auto;
+}
+#login_re{
+	border:3px solid #424242;
+	margin: auto 700px;
+	width: 500px;
+	height:570px;
+}
+.box2{
+	text-align:center;
+	margin: 30px 0px;
+	text-indent: 10px;
+}
+.textbox1{
+	font-size: 30px;
+	border:0px;
+	border-bottom: 2px solid #858585;
+}
+#topfont{
+	font-size: 40px; 
+	text-align: center; 
+	color: #868686; 
+	margin: 50px 0px 110px 0px;
+}
+#login_btns{
+	text-align: center;
+	margin: 30px 0px;
+}
+#ckbox{
+	padding: 5px 45px;
+}
+#LoginBtn{
+	color:white;
+	background: #424242;
+	width: 400px;
+	height: 70px;
+	font-size: 22px;
+}
+#join_find a{
+	color: #424242;
+}
+
+.input .eyes {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto 2px;
+  height: 30px;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+
+
+
+
+/* 회원가입 css */
+#join_re{
+	border:3px solid #424242;
+	width:600px;
+	margin-left: 650px;
+	height: auto;
+}
+#joinBtns{
+	margin:30px 0px;
+	padding : 10px 0px;
+}
+#joinBtn{
+	border-radius:10px;
+	color:white;
+	background:#424242;
+	height:40px;
+	margin-left:95px;
+	width: 200px;
+	border:1px solid #424242;
+}
+#canBtn{
+	border-radius:10px;
+	background:#424242;
+	color:white;
+	height:40px;
+	width: 200px;
+	border:1px solid #424242;
+}
+#joinBtn:hover{
+	background: #686868;
+}
+#canBtn:hover{
+	background: #686868;
+}
+#jungbok{
+	margin-left:5px;
+	width: 65px;
+	height: 40px;
+	border-radius: 10px;
+	border: 1px solid #424242;
+	color:white;
+	background: #424242;
+}
+#jungbok:hover{
+	background: #686868;	
+}
+#email_server{
+	font-size:24px;
+	height: 40px;
+}
+.phonebox{
+	font-size: 24px;
+	text-align: center;
+	border:0px;
+	border-bottom: 2px solid #858585;
+}
+#phonecheck{
+	margin-left:6px;
+	width: 65px;
+	height: 35px;
+	border-radius: 10px;
+	border: 1px solid #424242;
+	color:white;
+	background: #424242;
+}
+
+
+
+
+
+/* 아이디 비번찾기*/
+#find_cont{
+	width: 1100px;
+	height: 470px;
+	margin-left: 350px;padding: 50px;
+}
+#find_id_t{
+	color:#424242;
+	text-align:center;
+	font-size: 35px;
+	margin-top: 30px;
+	width: 300px;
+	margin-left: 100px;
+}
+#id_find{
+	margin-left:40px;
+	float:left;
+	border:2px solid #747474;
+	width: 500px;
+	height: 400px;
+	border-radius: 15px;
+}
+#find_id{
+	height: 350px;
+	text-align: center;
+	margin-top: 25px;
+}
+#find_id_name{
+	margin-top: 60px;
+}
+#find_id_mail{
+	margin-top: 30px;
+}
+#find_id_btn{
+	margin-top: 45px;
+	width: 150px;
+	height: 45px;
+	font-size: 18px;
+	color:white;
+	background: #747474;
+	border:0px;
+	border-radius: 10px;
+}
+#find_id_btn:hover{
+	background: #424242;
+}
+
+#find_pw_t{
+	color:#424242;
+	text-align:center;
+	font-size: 35px;
+	margin-top: 30px;
+	width: 300px;
+	margin-left: 100px;
+}
+#pw_find{
+	margin-right:30px;
+	float:right;
+	border:2px solid #747474;
+	width: 500px;
+	height: 400px;
+	border-radius: 15px;
+}
+#find_pw{
+	height: 350px;
+	text-align: center;
+	margin-top: 25px;
+}
+#find_pw_id{
+	margin-top: 60px;
+}
+#find_pw_mail{
+	margin-top: 30px;
+}
+#find_pw_btn{
+	margin-top: 45px;
+	width: 150px;
+	height: 45px;
+	font-size: 18px;
+	color:white;
+	background: #747474;
+	border:0px;
+	border-radius: 10px;
+}
+#find_pw_btn:hover{
+	background: #424242;
+}
+
+#find_t_login{
+	border: 1px solid red;
+	text-align: center;
+	width: 200px;
+	height:50px;
+	font-size: 18px;
+	margin-left: 450px;
+	margin-top: 50px;
+	border:1px solid #747474;
+	background: #747474;
+	border-radius:15px;
+	color: white;
+}
+#find_t_login:hover{
+	background: #424242;
+}
+
+
+
+/*아이디 찾기 페이지*/
+#checkidpage{
+	height: 300px;
+	padding:70px 0px;
+	border:2px solid #747474;
+	text-align: center;
+	width: 600px;
+	margin-left: 650px;
+}
+#checkidpage h1{
+	margin-top: 70px;
+}
+#ckbtn{
+	margin-top:60px;
+}
+#ckfipw,#ckfilo{
+	border:0px;
+	height: 50px;
+	width: 150px;
+	background: #747474;
+	border-radius: 10px;
+	color:white;
+}
+#ckfipw:hover, #ckfilo:hover{
+	background: #424242;
+}
+
+
+
+#checkpwdpage{
+	height: 300px;
+	padding:70px 0px;
+	border:2px solid #747474;
+	text-align: center;
+	width: 600px;
+	margin-left: 650px;
+}
+#checkpwdpage h1{
+	margin-top: 70px;
+}
+#ckpwbtn{
+	margin-top:60px;
+}
+#ckfplo{
+	border:0px;
+	height: 50px;
+	width: 150px;
+	background: #747474;
+	border-radius: 10px;
+	color:white;
+}
+#ckfplo:hover{
+	background: #424242;
+}
+
+
+
+
+

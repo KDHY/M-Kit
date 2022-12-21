@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+  
+  <configuration>
+     <typeAliases>
+      
+		<typeAlias type="com.naver.vo.mkitMemberVo" alias="mkMem" />
+
+		<typeAlias type="com.naver.vo.mkitgongjiVo" alias="mkGong" />
+		
+		<typeAlias type="com.naver.vo.MkitcustomVo" alias="mkCus" />
+		
+		<typeAlias type="com.naver.vo.MkitmenuVo" alias="mkMenu" />
+
+     </typeAliases>
+  </configuration>
+  
